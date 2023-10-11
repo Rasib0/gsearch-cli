@@ -38,7 +38,7 @@ func main() {
 		}
 
 		if query == "--version" {
-			fmt.Printf("gsearch version %s\n", version)
+			fmt.Printf("gsearch-cli version %s\n", version)
 			os.Exit(0)
 		}
 
@@ -64,7 +64,7 @@ func main() {
 func printUsage(searchURLs *map[string]SearchEngine) {
 	message := `Please provide a search query as argument (default search engine is Google)
 
-Usage: ./gsearch <flag> <query> or ./gsearch <query>
+Usage: ./gs <flag> <query> or ./gs <query>
 
 Available search flags:`
 
