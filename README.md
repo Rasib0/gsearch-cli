@@ -32,7 +32,7 @@ gsearch-cli -h
 To check the version of `gsearch-cli`, use:
 
 ```
-gsearch-cli --version
+gs --version
 ```
 
 ## Installation
@@ -46,13 +46,13 @@ gsearch-cli --version
 2. **Build the executable:**
 
    ```
-   go build -o gsearch-cli
+   go build -o gs
    ```
 
 3. **Move the executable to a directory in your PATH (optional):**
 
    ```
-   mv gsearch-cli /usr/local/bin/
+   mv gs /usr/local/bin/
    ```
 
 ## Contributing
