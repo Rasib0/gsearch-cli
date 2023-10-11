@@ -7,13 +7,13 @@
 - To perform a search using the default search engine (Google):
 
    ```
-   gsearch-cli <query>
+   gs <query>
    ```
 
 - To specify a search engine using a flag:
 
    ```
-   gsearch-cli <flag> <query>
+   gs <flag> <query>
    ```
 
 Available search engine flags:
@@ -26,7 +26,7 @@ Available search engine flags:
 To display the help message with available search engine flags, run:
 
 ```
-gsearch-cli -h
+gs -h
 ```
 
 To check the version of `gsearch-cli`, use:
