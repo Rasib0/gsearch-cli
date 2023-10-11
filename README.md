@@ -61,5 +61,4 @@ Contributions to `gsearch-cli` are welcome! If you have any improvements, bug fi
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
+This project is licensed under the Apache License 2.0
