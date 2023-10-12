@@ -57,14 +57,14 @@ func main() {
 		os.Exit(1)
 	}
 
-	searchAndOpen(query, &searchEngine)
+	searchAndOpen(query, searchEngine)
 }
 
 // Print usage message
 func printUsage(searchURLs *map[string]SearchEngine) {
 	message := `Please provide a search query as argument (default search engine is Google)
 
-Usage: gs <flag> <query> or gs <query>
+Usage: ./gs <flag> <query> or ./gs <query>
 
 Available search flags:`
 
@@ -76,7 +76,7 @@ Available search flags:`
 }
 
 // Search and open the browser
-func searchAndOpen(query string, searchEngine *SearchEngine) {
+func searchAndOpen(query string, searchEngine SearchEngine) {
 	query = strings.ReplaceAll(query, " ", "+")
 	searchURL := searchEngine.URL + query
 
@@ -90,8 +90,13 @@ func searchAndOpen(query string, searchEngine *SearchEngine) {
 		cmd = exec.Command("xdg-open", searchURL)
 	case "windows":
 		cmd = exec.Command("rundll32", "url.dll,FileProtocolHandler", searchURL)
-	default:
+	case "darwin":
 		cmd = exec.Command("open", searchURL)
+	case "freebsd":
+		cmd = exec.Command("xdg-open", searchURL)
+	default:
+		fmt.Printf("Unsupported OS: %s\n", runtimeOS)
+		os.Exit(1)
 	}
 
 	// Start the browser or display an error message
